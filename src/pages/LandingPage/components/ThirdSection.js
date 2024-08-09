@@ -1,34 +1,31 @@
 import { Stack, Typography } from "@mui/material";
-import backgroundone from "../../../shared/assets/images/backgroundone.jpg";
-
+import backgroundtwo from "../../../shared/assets/images/backgroundtwo.jpg";
 import React from "react";
 
-const FirstSection = () => {
+const ThirdSection = () => {
   return (
     <Stack
       direction="column"
       justifyContent="center"
       alignItems="center"
       sx={{
-        height: "90vh",
-        backgroundImage: `url(${backgroundone})`,
+        height: "80vh",
+        backgroundImage: `url(${backgroundtwo})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         color: "white",
         textAlign: "center",
-        padding: { xs: "0.5rem", md: "1rem", lg: "2rem" },
       }}
     >
       <Typography variant="h2" sx={{ marginBottom: "1rem" }}>
         Welcome to Taqatco
       </Typography>
       <Typography variant="h6" sx={{ maxWidth: "600px" }}>
-        We turn waste into valuable resources, driving Saudi Arabia’s path to
-        zero carbon emissions by 2060. Discover our sustainable solutions in
-        recycling and biogas production for a cleaner, greener future.
+        Discover the beauty of the world around you. Explore the wilderness,
+        embrace the serenity, and reconnect with nature.
       </Typography>
     </Stack>
   );
 };
 
-export default FirstSection;
+export default ThirdSection;

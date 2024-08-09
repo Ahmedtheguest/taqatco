@@ -23,7 +23,11 @@ const SecondSection = () => {
     if (overlayRef.current) {
       const overlayHeight = overlayRef.current.offsetHeight;
       // Calculate the container height to be 80% of overlay height
-      setContainerHeight(`${overlayHeight * 0.83}px`);
+      if (isMdUp) {
+        setContainerHeight(`${overlayHeight * 0.83}px`);
+      } else {
+        setContainerHeight(`${overlayHeight * 0.9}px`);
+      }
     }
   };
 
@@ -87,7 +91,7 @@ const SecondSection = () => {
         backgroundColor: "primary.main",
         color: "white",
         textAlign: "center",
-        padding: "2rem",
+        padding: { xs: "0.5rem", md: "1rem", lg: "2rem" },
       }}
     >
       <Stack
@@ -97,7 +101,7 @@ const SecondSection = () => {
         alignItems="center"
         sx={{
           position: "absolute",
-          top: "-10%",
+          top: { xs: "-5%", md: "-10%" },
           left: "50%",
           transform: "translateX(-50%)",
           width: "90%",
@@ -114,7 +118,7 @@ const SecondSection = () => {
             flex: 1,
             backgroundColor: "primary.light",
             width: "100%",
-            padding: "3rem",
+            padding: { xs: "2rem", md: "3rem" },
             textAlign: "center",
             borderTopRightRadius: "15px",
             borderTopLeftRadius: "15px",
@@ -165,6 +169,7 @@ const SecondSection = () => {
                 height: "100%", // Make the image height stretch to the flex container's height
                 width: "100%",
                 maxHeight: "400px", // Set a maximum height for the image
+                minHeight: "250px",
                 objectFit: "cover", // Ensure the image covers the space without distortion
               }}
             />
@@ -175,7 +180,7 @@ const SecondSection = () => {
             flex: 1,
             backgroundColor: "secondary.main",
             width: "100%",
-            padding: "3rem",
+            padding: { xs: "2rem", md: "3rem" },
             textAlign: "center",
           }}
         >
@@ -184,12 +189,12 @@ const SecondSection = () => {
               borderRadius: "12px",
               flex: 1,
               backgroundColor: "secondary.light",
-              padding: "2rem",
+              padding: { xs: "1rem", md: "2rem" },
             }}
             direction={{ xs: "column", md: "row" }}
             justifyContent={"flex-start"}
             alignItems={"center"}
-            gap={"3rem"}
+            gap={{ xs: "0.5rem", md: "3rem" }}
           >
             <Stack direction={"column"} gap={"1rem"} textAlign={"start"}>
               <Typography variant="h6" color={"primary.light"}>
@@ -235,7 +240,7 @@ const SecondSection = () => {
             flex: 1,
             backgroundColor: "primary.light",
             width: "100%",
-            padding: "3rem",
+            padding: { xs: "2rem", md: "3rem" },
             textAlign: "center",
             borderBottomRightRadius: "15px",
             borderBottomLeftRadius: "15px",
