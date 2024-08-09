@@ -1,5 +1,6 @@
 import { createTheme } from "@mui/material";
 import { responsiveFontSizes } from "@mui/material/styles";
+import { light } from "@mui/material/styles/createPalette";
 
 const theme = createTheme({
   breakpoints: {
@@ -28,6 +29,7 @@ const theme = createTheme({
       light: "#6E6DAD",
     },
     tertiary: {
+      light: "#646A73",
       main: "#101828",
     },
     gray: {
