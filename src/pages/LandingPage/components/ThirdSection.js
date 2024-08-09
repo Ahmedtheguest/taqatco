@@ -70,10 +70,9 @@ const ThirdSection = () => {
       <Stack
         sx={{
           paddingY: {
-            xs: "90%",
-            semiSm: "80%",
-            medSm: "50%",
-            semiMd: "40%",
+            xs: "65%",
+            semiSm: "45%",
+            semiMd: "30%",
             md: "30%",
             lg: "20%",
             xl: "15%",
