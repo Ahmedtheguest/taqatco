@@ -47,7 +47,7 @@ const theme = createTheme({
       g600: "#475467",
     },
     green: {
-      primary: "#00A886",
+      main: "#00A886",
     },
   },
   typography: {

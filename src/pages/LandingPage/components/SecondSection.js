@@ -11,7 +11,7 @@ import {
   FaGlobe,
 } from "react-icons/fa";
 
-const SecondSection = () => {
+const SecondSection = ({ targetRef }) => {
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
 
@@ -85,6 +85,7 @@ const SecondSection = () => {
       direction="column"
       justifyContent="center"
       alignItems="center"
+      ref={targetRef}
       sx={{
         position: "relative",
         height: containerHeight,
@@ -130,6 +131,7 @@ const SecondSection = () => {
             justifyContent={"center"}
             textAlign={"start"}
             gap={"1rem"}
+            id="about-us"
           >
             <Typography color={"tertiary.main"} variant="h5">
               About us
@@ -196,7 +198,12 @@ const SecondSection = () => {
             alignItems={"center"}
             gap={{ xs: "0.5rem", md: "3rem" }}
           >
-            <Stack direction={"column"} gap={"1rem"} textAlign={"start"}>
+            <Stack
+              direction={"column"}
+              gap={"1rem"}
+              textAlign={"start"}
+              id="vision-mission"
+            >
               <Typography variant="h6" color={"primary.light"}>
                 Our Mission
               </Typography>
@@ -247,7 +254,7 @@ const SecondSection = () => {
             flexWrap: "nowrap",
           }}
         >
-          <Typography variant="h6" color={"tertiary.main"}>
+          <Typography variant="h6" color={"tertiary.main"} id="values">
             Our Values
           </Typography>
           <Grid xs={12} container>

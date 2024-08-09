@@ -6,6 +6,7 @@ import React from "react";
 const FirstSection = () => {
   return (
     <Stack
+      id="home"
       direction="column"
       justifyContent="center"
       alignItems="center"

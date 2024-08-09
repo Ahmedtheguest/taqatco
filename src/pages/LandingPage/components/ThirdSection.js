@@ -66,6 +66,7 @@ const ThirdSection = () => {
         color: "white",
         textAlign: "center",
       }}
+      id="goals"
     >
       <Stack
         sx={{

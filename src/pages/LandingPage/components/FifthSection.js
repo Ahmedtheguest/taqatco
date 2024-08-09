@@ -17,13 +17,6 @@ import MemberCard from "../../../components/MemberCard";
 import Grid from "@mui/material/Grid";
 
 const FifthSection = () => {
-  const theme = useTheme();
-
-  const servicesStyles = {
-    color: theme.palette.primary.light,
-    size: 30,
-  };
-
   const founders = [
     {
       name: "Osama Alharbi",
@@ -61,6 +54,7 @@ const FifthSection = () => {
           borderRadius: "12px",
         }}
         gap={"2rem"}
+        id="team"
       >
         <Typography color={"tertiary.main"} variant="h5">
           Our Team

@@ -8,7 +8,7 @@ const MemberCard = ({ name, photo, link }) => {
   const theme = useTheme();
 
   return (
-    <Grid item xs={12} semiMd={6} xxl={3}>
+    <Grid item xs={12} semiMd={6} lg={3} xxl={3}>
       <Stack
         direction={"column"}
         sx={{
