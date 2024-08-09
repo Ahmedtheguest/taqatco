@@ -1,15 +1,65 @@
-import { Stack, Typography } from "@mui/material";
+import { Grid, Stack, Typography } from "@mui/material";
 import backgroundtwo from "../../../shared/assets/images/backgroundtwo.jpg";
 import React from "react";
+import GoalCard from "../../../components/GoalCard";
+import {
+  FaRecycle,
+  FaTree,
+  FaRedo,
+  FaCogs,
+  FaChartLine,
+  FaPeopleCarry,
+} from "react-icons/fa";
 
 const ThirdSection = () => {
+  const goalsStyles = {
+    color: "primary.light",
+    size: 24,
+  };
+  const goals = [
+    {
+      title: "Enhance Environmental Sustainability",
+      description:
+        "Lead waste recycling initiatives to support Saudi Arabia's environmental goals.",
+      icon: <FaRecycle {...goalsStyles} />,
+    },
+    {
+      title: "Reduce Carbon Footprint",
+      description:
+        "Drive efforts toward achieving zero carbon emissions by 2060.",
+      icon: <FaTree {...goalsStyles} />,
+    },
+    {
+      title: "Promote Circular Economy",
+      description:
+        "Transform waste into valuable resources to reduce landfill dependence.",
+      icon: <FaRedo {...goalsStyles} />,
+    },
+    {
+      title: "Foster Innovation",
+      description:
+        "Develop cutting-edge recycling technologies aligned with global standards.",
+      icon: <FaCogs {...goalsStyles} />,
+    },
+    {
+      title: "Support Economic Diversification",
+      description:
+        "Contribute to the growth of the green economy in Saudi Arabia.",
+      icon: <FaChartLine {...goalsStyles} />,
+    },
+    {
+      title: "Empower Communities",
+      description:
+        "Create sustainable job opportunities and raise environmental awareness.",
+      icon: <FaPeopleCarry {...goalsStyles} />,
+    },
+  ];
+
   return (
     <Stack
       direction="column"
-      justifyContent="center"
-      alignItems="center"
+      alignItems="flex-start"
       sx={{
-        height: "80vh",
         backgroundImage: `url(${backgroundtwo})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -17,13 +67,41 @@ const ThirdSection = () => {
         textAlign: "center",
       }}
     >
-      <Typography variant="h2" sx={{ marginBottom: "1rem" }}>
-        Welcome to Taqatco
-      </Typography>
-      <Typography variant="h6" sx={{ maxWidth: "600px" }}>
-        Discover the beauty of the world around you. Explore the wilderness,
-        embrace the serenity, and reconnect with nature.
-      </Typography>
+      <Stack
+        sx={{
+          paddingY: {
+            xs: "90%",
+            semiSm: "80%",
+            medSm: "50%",
+            semiMd: "40%",
+            md: "30%",
+            lg: "20%",
+            xl: "15%",
+          },
+          width: "90%",
+          margin: "auto",
+          padding: "1rem",
+        }}
+        alignItems={"flex-start"}
+        textAlign={"center"}
+      >
+        <Typography
+          variant="h2"
+          sx={{ marginBottom: "1rem" }}
+          color={"primary.light"}
+        >
+          Our Goals Align with Vision 2030!
+        </Typography>
+        <Grid xs={12} container>
+          {goals.map((goal) => (
+            <GoalCard
+              description={goal.description}
+              title={goal.title}
+              icon={goal.icon}
+            />
+          ))}
+        </Grid>
+      </Stack>
     </Stack>
   );
 };

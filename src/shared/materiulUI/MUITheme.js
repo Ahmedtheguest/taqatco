@@ -7,6 +7,7 @@ const theme = createTheme({
     values: {
       xs: 0,
       semiSm: 425,
+      medSm: 480,
       sm: 600,
       semiMd: 700,
       md: 900,
