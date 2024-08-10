@@ -1,16 +1,18 @@
-import { Grid, Stack, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import React from "react";
+import Grid from "@mui/material/Grid";
 
 const ServiceCard = ({ title, description, icon }) => {
   return (
     <Grid
       direction={"column"}
       alignItems={"center"}
+      item
       xs={12}
       md={6}
       lg={4}
       fourK={2}
-      padding={"0.5rem"}
+      paddingBottom={"1rem"}
     >
       <Stack
         sx={{

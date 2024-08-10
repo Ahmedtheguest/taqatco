@@ -1,6 +1,5 @@
 import { Stack, Typography } from "@mui/material";
 import React from "react";
-import { useTheme } from "@emotion/react";
 import osama from "../../../shared/assets/images/osama.jpg";
 import ahmed from "../../../shared/assets/images/ahmed.jpg";
 import jasem from "../../../shared/assets/images/jasem.jpg";
@@ -10,8 +9,10 @@ import Grid from "@mui/material/Grid";
 import { useTranslation } from "react-i18next";
 
 const FifthSection = () => {
+  //SECTION - general
   const { t } = useTranslation();
 
+  //SECTION - founders
   const founders = [
     {
       name: t("fifthSection.teamMembers.0.name"),
@@ -46,7 +47,6 @@ const FifthSection = () => {
         sx={{
           width: "90%",
           margin: "auto",
-          padding: "1rem",
           borderRadius: "12px",
         }}
         gap={"2rem"}

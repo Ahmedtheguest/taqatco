@@ -11,7 +11,6 @@ const Wrapper = ({ component }) => {
   const handleNavbarColorChange = (isOverTarget) => {
     setNavbarColorChange(isOverTarget);
   };
-
   const componentWithProps = React.cloneElement(component, {
     onNavbarColorChange: handleNavbarColorChange,
   });

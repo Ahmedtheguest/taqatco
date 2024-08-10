@@ -7,11 +7,15 @@ import logoTransparent from "../../assets/images/logoTransparent.png";
 import { useTranslation } from "react-i18next";
 
 const Navbar = ({ colorChange }) => {
+  //SECTION - general
   const { t, i18n } = useTranslation();
   const theme = useTheme();
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
+  //SECTION - useState
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  //SECTION - styles
   const textStyles = (colorChange) => ({
     cursor: "pointer",
     color: colorChange
@@ -26,6 +30,7 @@ const Navbar = ({ colorChange }) => {
     },
   });
 
+  //SECTION - functions
   const handleScroll = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -91,6 +96,7 @@ const Navbar = ({ colorChange }) => {
     );
   };
 
+  //SECTION - useEffect
   useEffect(() => {
     const handleScrollEvent = () => {
       const scrollPosition = window.scrollY;
@@ -130,7 +136,7 @@ const Navbar = ({ colorChange }) => {
           alignItems="center"
           bgcolor={colorChange ? "primary.light" : "transparent"}
           sx={{
-            position: "fixed",
+            position: colorChange ? "fixed" : "absolute",
             top: "0rem",
             left: "0rem",
             width: "100%",

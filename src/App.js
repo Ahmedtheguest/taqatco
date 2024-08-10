@@ -4,7 +4,8 @@ import Wrapper from "./shared/template/Wrapper/Wrapper";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import Home from "./pages/LandingPage/Home";
-function App() {
+
+const App = () => {
   //SECTION - Translation related
   const { i18n } = useTranslation();
   document.body.dir = i18n.dir();
@@ -23,6 +24,6 @@ function App() {
       </Routes>
     </>
   );
-}
+};
 
 export default App;

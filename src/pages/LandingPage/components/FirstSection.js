@@ -4,6 +4,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 const FirstSection = () => {
+  //SECTION - general
   const { t } = useTranslation();
 
   return (
@@ -25,7 +26,7 @@ const FirstSection = () => {
       <Typography variant="h2" sx={{ marginBottom: "1rem" }}>
         {t("firstSection.welcome")}
       </Typography>
-      <Typography variant="h6" sx={{ maxWidth: "600px" }}>
+      <Typography variant="h6" sx={{ maxWidth: "600px", padding: "0.5rem" }}>
         {t("firstSection.description")}
       </Typography>
     </Stack>

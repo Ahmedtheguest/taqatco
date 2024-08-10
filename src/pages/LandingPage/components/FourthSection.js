@@ -1,4 +1,4 @@
-import { Grid, Stack, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import React from "react";
 import {
   FaTrashAlt,
@@ -11,16 +11,18 @@ import {
 import ServiceCard from "../../../components/ServiceCard";
 import { useTheme } from "@emotion/react";
 import { useTranslation } from "react-i18next";
+import Grid from "@mui/material/Grid";
 
 const FourthSection = () => {
+  //SECTION - general
   const theme = useTheme();
   const { t } = useTranslation();
 
+  //SECTION - services
   const servicesStyles = {
     color: theme.palette.primary.light,
     size: 30,
   };
-
   const services = [
     {
       title: t("fourthSection.services.municipalSolidWasteRecycling.title"),
@@ -69,13 +71,13 @@ const FourthSection = () => {
       sx={{
         paddingY: "2rem",
         backgroundColor: "secondary.dark",
+        paddingX: "0.5rem",
       }}
     >
       <Stack
         sx={{
           width: "90%",
           margin: "auto",
-          padding: "1rem",
           borderRadius: "12px",
         }}
         gap={"2rem"}
@@ -84,7 +86,12 @@ const FourthSection = () => {
         <Typography color={"primary.light"} variant="h5">
           {t("fourthSection.servicesTitle")}
         </Typography>
-        <Grid direction={{ xs: "column", md: "row" }} container xs={12}>
+        <Grid
+          direction={{ xs: "column", md: "row" }}
+          container
+          xs={12}
+          spacing={{ xs: "0.5rem", md: "1rem" }}
+        >
           {services.map((service) => (
             <ServiceCard
               title={service.title}

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useTransition } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Divider, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
 import forest from "../../../shared/assets/images/forest.jpg";
 import { useTheme } from "@emotion/react";
@@ -13,14 +13,16 @@ import {
 import { useTranslation } from "react-i18next";
 
 const SecondSection = ({ targetRef }) => {
+  //SECTION - general
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
-  const { t, i18n } = useTranslation();
-
-  // Refs to get heights
+  const { t } = useTranslation();
   const overlayRef = useRef(null);
+
+  //SECTION - useState
   const [containerHeight, setContainerHeight] = useState("60vh"); // Default value
 
+  //SECTION - functions
   const updateContainerHeight = () => {
     if (overlayRef.current) {
       const overlayHeight = overlayRef.current.offsetHeight;
@@ -33,6 +35,7 @@ const SecondSection = ({ targetRef }) => {
     }
   };
 
+  //SECTION - useEffect
   useEffect(() => {
     // Initial height calculation
     updateContainerHeight();
@@ -45,6 +48,8 @@ const SecondSection = ({ targetRef }) => {
       window.removeEventListener("resize", updateContainerHeight);
     };
   }, []);
+
+  //SECTION - values
   const valuesStyles = {
     size: 24,
     color: theme.palette.tertiary.light,
@@ -89,7 +94,6 @@ const SecondSection = ({ targetRef }) => {
         backgroundColor: "primary.main",
         color: "white",
         textAlign: "center",
-        padding: { xs: "0.5rem", md: "1rem", lg: "2rem" },
       }}
     >
       <Stack
@@ -106,7 +110,7 @@ const SecondSection = ({ targetRef }) => {
           height: "auto",
           backgroundColor: "transparent",
           zIndex: 1,
-          padding: "1rem",
+          padding: { xs: "0.25rem", md: "1rem" },
           borderRadius: "15px",
         }}
       >
@@ -116,7 +120,7 @@ const SecondSection = ({ targetRef }) => {
             flex: 1,
             backgroundColor: "primary.light",
             width: "100%",
-            padding: { xs: "2rem", md: "3rem" },
+            padding: { xs: "1.5rem", md: "2rem" },
             textAlign: "center",
             borderTopRightRadius: "15px",
             borderTopLeftRadius: "15px",
@@ -170,7 +174,7 @@ const SecondSection = ({ targetRef }) => {
             flex: 1,
             backgroundColor: "secondary.main",
             width: "100%",
-            padding: { xs: "2rem", md: "3rem" },
+            padding: { xs: "1.5rem", md: "2rem" },
             textAlign: "center",
           }}
         >
@@ -228,7 +232,7 @@ const SecondSection = ({ targetRef }) => {
             flex: 1,
             backgroundColor: "primary.light",
             width: "100%",
-            padding: { xs: "2rem", md: "3rem" },
+            padding: { xs: "1.5rem", md: "2rem" },
             textAlign: "center",
             borderBottomRightRadius: "15px",
             borderBottomLeftRadius: "15px",

@@ -13,7 +13,10 @@ import {
 import { useTranslation } from "react-i18next";
 
 const ThirdSection = () => {
+  //SECTION - general
   const { t } = useTranslation();
+
+  //SECTION - goals
   const goalsStyles = {
     color: "primary.light",
     size: 24,
@@ -70,8 +73,16 @@ const ThirdSection = () => {
     >
       <Stack
         sx={{
-          paddingY: {
-            xs: "65%",
+          paddingTop: {
+            xs: "60%",
+            semiSm: "45%",
+            semiMd: "30%",
+            md: "30%",
+            lg: "20%",
+            xl: "15%",
+          },
+          paddingBottom: {
+            xs: "30%",
             semiSm: "45%",
             semiMd: "30%",
             md: "30%",
@@ -80,7 +91,6 @@ const ThirdSection = () => {
           },
           width: "90%",
           margin: "auto",
-          padding: "1rem",
         }}
         alignItems={"flex-start"}
         textAlign={"center"}

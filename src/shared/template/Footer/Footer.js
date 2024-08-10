@@ -14,10 +14,12 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  //SECTION - general
   const { t } = useTranslation();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
+  //SECTION - functions
   const handleScroll = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -39,13 +41,14 @@ const Footer = () => {
       sx={{
         backgroundColor: theme.palette.green.main,
         color: theme.palette.common.white,
-        padding: "2rem",
+        paddingX: "5%",
+        paddingY: "1rem",
         flexWrap: "wrap", // Ensures wrapping on small screens
       }}
       spacing={4}
     >
       <Stack
-        direction={{ xs: "column", md: "row", width: "90%" }}
+        direction={{ xs: "column", md: "row" }}
         justifyContent="space-between"
         alignItems="center"
         spacing={4}
