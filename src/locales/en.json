@@ -1,3 +1,146 @@
 {
-  "general": {}
+  "firstSection": {
+    "welcome": "Welcome to Taqatco",
+    "description": "We turn waste into valuable resources, driving Saudi Arabia’s path to zero carbon emissions by 2060. Discover our sustainable solutions in recycling and biogas production for a cleaner, greener future."
+  },
+  "secondSection": {
+    "aboutUs": {
+      "title": "About us",
+      "description1": "TAQATCO is a leading innovator in sustainable waste management, committed to transforming waste into valuable resources. Our mission is to drive Saudi Arabia's journey towards zero carbon emissions by 2060, aligning with the 'Green Saudi Initiative.'",
+      "description2": "Specializing in municipal solid waste recycling, we convert waste into biogas and organic fertilizers, reducing reliance on landfills and promoting a circular economy. Our processes adhere to internationally recognized standards, ensuring safety, efficiency, and environmental protection.",
+      "description3": "At TAQATCO, we are dedicated to creating a cleaner, greener future for Saudi Arabia, turning waste into wealth and contributing to a sustainable society."
+    },
+    "missionVision": {
+      "missionTitle": "Our Mission",
+      "missionDescription": "To provide innovative and environmentally safe waste recycling solutions that reduce carbon emissions, protect natural resources, and support the 'Green Saudi Initiative,' all while delivering economic value and promoting sustainability across the Kingdom.",
+      "visionTitle": "Our Vision",
+      "visionDescription": "To be the leading force in sustainable waste management, transforming waste into valuable resources, and driving Saudi Arabia's journey towards a zero-carbon future, while contributing to a thriving circular economy."
+    },
+    "values": {
+      "title": "Our Values",
+      "sustainability": {
+        "title": "Sustainability",
+        "description": "We are committed to promoting sustainable practices that protect and preserve our environment for future generations."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "We embrace innovation to drive advancements in waste management and circular economy practices."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "We believe in the power of partnerships with the community, industry, and government to achieve our goals."
+      },
+      "integrity": {
+        "title": "Integrity",
+        "description": "We uphold the highest standards of integrity in all our operations and interactions."
+      },
+      "responsibility": {
+        "title": "Responsibility",
+        "description": "We take responsibility for the impact of our actions on society and the environment, striving to create positive change."
+      }
+    }
+  },
+  "thirdSection": {
+    "goalsTitle": "Our Goals Align with Vision 2030!",
+    "goals": {
+      "enhanceEnvironmentalSustainability": {
+        "title": "Enhance Environmental Sustainability",
+        "description": "Lead waste recycling initiatives to support Saudi Arabia's environmental goals."
+      },
+      "reduceCarbonFootprint": {
+        "title": "Reduce Carbon Footprint",
+        "description": "Drive efforts toward achieving zero carbon emissions by 2060."
+      },
+      "promoteCircularEconomy": {
+        "title": "Promote Circular Economy",
+        "description": "Transform waste into valuable resources to reduce landfill dependence."
+      },
+      "fosterInnovation": {
+        "title": "Foster Innovation",
+        "description": "Develop cutting-edge recycling technologies aligned with global standards."
+      },
+      "supportEconomicDiversification": {
+        "title": "Support Economic Diversification",
+        "description": "Contribute to the growth of the green economy in Saudi Arabia."
+      },
+      "empowerCommunities": {
+        "title": "Empower Communities",
+        "description": "Create sustainable job opportunities and raise environmental awareness."
+      }
+    }
+  },
+  "fourthSection": {
+    "servicesTitle": "Our Services",
+    "services": {
+      "municipalSolidWasteRecycling": {
+        "title": "Municipal Solid Waste Recycling",
+        "description": "Advanced processes to convert waste into valuable resources, reducing landfill usage."
+      },
+      "metalAndScrapRecycling": {
+        "title": "Metal and Scrap Recycling",
+        "description": "Specialized recycling of various scrap materials, including metals, to promote resource recovery and sustainability."
+      },
+      "biogasProduction": {
+        "title": "Biogas Production",
+        "description": "Generation of renewable energy from organic waste through anaerobic digestion."
+      },
+      "organicFertilizerProduction": {
+        "title": "Organic Fertilizer Production",
+        "description": "Conversion of waste into high-quality organic fertilizers for agricultural use."
+      },
+      "environmentalConsulting": {
+        "title": "Environmental Consulting",
+        "description": "Expert guidance on sustainable waste management practices and regulatory compliance."
+      },
+      "wasteManagementSolutions": {
+        "title": "Waste Management Solutions",
+        "description": "Tailored solutions for businesses and municipalities to manage and reduce waste effectively."
+      }
+    }
+  },
+  "fifthSection": {
+    "teamTitle": "Our Team",
+    "teamMembers": [
+      {
+        "name": "Osama Alharbi",
+        "link": "https://www.linkedin.com/in/osama-alharbi-1b3a961ba/"
+      },
+      {
+        "name": "Ahmed Aldhaif",
+        "link": "https://www.linkedin.com/in/ahmed-aldhaif-75360a262/"
+      },
+      {
+        "name": "Jasem Alyousef",
+        "link": "https://www.linkedin.com/in/jasem-al-yousef-626473252/"
+      },
+      {
+        "name": "Waleed Alghamdi",
+        "link": "https://www.linkedin.com/in/waleed-alghamdi-74996b21a/"
+      }
+    ]
+  },
+  "footer": {
+    "sections": [
+      { "id": "home", "name": "Home" },
+      { "id": "about-us", "name": "About Us" },
+      { "id": "vision-mission", "name": "Vision and Mission" },
+      { "id": "values", "name": "Values" },
+      { "id": "goals", "name": "Goals" },
+      { "id": "services", "name": "Services" },
+      { "id": "team", "name": "Team" }
+    ],
+    "copyright": "© {{year}} Taqatco. All rights reserved."
+  },
+  "navbar": {
+    "sections": [
+      { "id": "home", "name": "Home" },
+      { "id": "about-us", "name": "About Us" },
+      { "id": "vision-mission", "name": "Vision and Mission" },
+      { "id": "values", "name": "Values" },
+      { "id": "goals", "name": "Goals" },
+      { "id": "services", "name": "Services" },
+      { "id": "team", "name": "Team" }
+    ],
+    "language": "العربية"
+  }
 }

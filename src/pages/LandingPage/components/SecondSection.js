@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useTransition } from "react";
 import { Divider, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
 import forest from "../../../shared/assets/images/forest.jpg";
 import { useTheme } from "@emotion/react";
@@ -10,10 +10,12 @@ import {
   FaShieldAlt,
   FaGlobe,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const SecondSection = ({ targetRef }) => {
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
+  const { t, i18n } = useTranslation();
 
   // Refs to get heights
   const overlayRef = useRef(null);
@@ -49,33 +51,28 @@ const SecondSection = ({ targetRef }) => {
   };
   const values = [
     {
-      title: "Sustainability",
-      description:
-        "We are committed to promoting sustainable practices that protect and preserve our environment for future generations.",
+      title: t("secondSection.values.sustainability.title"),
+      description: t("secondSection.values.sustainability.description"),
       icon: <FaLeaf {...valuesStyles} />,
     },
     {
-      title: "Innovation",
-      description:
-        "We embrace innovation to drive advancements in waste management and circular economy practices.",
+      title: t("secondSection.values.innovation.title"),
+      description: t("secondSection.values.innovation.description"),
       icon: <FaRocket {...valuesStyles} />,
     },
     {
-      title: "Collaboration",
-      description:
-        "We believe in the power of partnerships with the community, industry, and government to achieve our goals.",
+      title: t("secondSection.values.collaboration.title"),
+      description: t("secondSection.values.collaboration.description"),
       icon: <FaHandsHelping {...valuesStyles} />,
     },
     {
-      title: "Integrity",
-      description:
-        "We uphold the highest standards of integrity in all our operations and interactions.",
+      title: t("secondSection.values.integrity.title"),
+      description: t("secondSection.values.integrity.description"),
       icon: <FaShieldAlt size={24} {...valuesStyles} />,
     },
     {
-      title: "Responsibility",
-      description:
-        "We take responsibility for the impact of our actions on society and the environment, striving to create positive change.",
+      title: t("secondSection.values.responsibility.title"),
+      description: t("secondSection.values.responsibility.description"),
       icon: <FaGlobe size={24} {...valuesStyles} />,
     },
   ];
@@ -134,25 +131,16 @@ const SecondSection = ({ targetRef }) => {
             id="about-us"
           >
             <Typography color={"tertiary.main"} variant="h5">
-              About us
+              {t("secondSection.aboutUs.title")}
             </Typography>
             <Typography color={"tertiary.light"} variant="body2">
-              TAQATCO is a leading innovator in sustainable waste management,
-              committed to transforming waste into valuable resources. Our
-              mission is to drive Saudi Arabia's journey towards zero carbon
-              emissions by 2060, aligning with the "Green Saudi Initiative."
+              {t("secondSection.aboutUs.description1")}
             </Typography>
             <Typography color={"tertiary.light"} variant="body2">
-              Specializing in municipal solid waste recycling, we convert waste
-              into biogas and organic fertilizers, reducing reliance on
-              landfills and promoting a circular economy. Our processes adhere
-              to internationally recognized standards, ensuring safety,
-              efficiency, and environmental protection.
+              {t("secondSection.aboutUs.description2")}
             </Typography>
             <Typography color={"tertiary.light"} variant="body2">
-              At TAQATCO, we are dedicated to creating a cleaner, greener future
-              for Saudi Arabia, turning waste into wealth and contributing to a
-              sustainable society.
+              {t("secondSection.aboutUs.description3")}
             </Typography>
           </Stack>
           <Stack
@@ -205,14 +193,10 @@ const SecondSection = ({ targetRef }) => {
               id="vision-mission"
             >
               <Typography variant="h6" color={"primary.light"}>
-                Our Mission
+                {t("secondSection.missionVision.missionTitle")}
               </Typography>
               <Typography variant="body2" color={"primary.light"}>
-                To provide innovative and environmentally safe waste recycling
-                solutions that reduce carbon emissions, protect natural
-                resources, and support the "Green Saudi Initiative," all while
-                delivering economic value and promoting sustainability across
-                the Kingdom.
+                {t("secondSection.missionVision.missionDescription")}
               </Typography>
             </Stack>
             <Divider
@@ -228,13 +212,10 @@ const SecondSection = ({ targetRef }) => {
             />
             <Stack direction={"column"} gap={"1rem"} textAlign={"start"}>
               <Typography variant="h6" color={"primary.light"}>
-                Our Vision
+                {t("secondSection.missionVision.visionTitle")}
               </Typography>
               <Typography variant="body2" color={"primary.light"}>
-                To be the leading force in sustainable waste management,
-                transforming waste into valuable resources, and driving Saudi
-                Arabia's journey towards a zero-carbon future, while
-                contributing to a thriving circular economy.
+                {t("secondSection.missionVision.visionDescription")}
               </Typography>
             </Stack>
           </Stack>
@@ -255,7 +236,7 @@ const SecondSection = ({ targetRef }) => {
           }}
         >
           <Typography variant="h6" color={"tertiary.main"} id="values">
-            Our Values
+            {t("secondSection.values.title")}
           </Typography>
           <Grid xs={12} container>
             {values.map((value) => (

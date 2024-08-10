@@ -1,9 +1,11 @@
 import { Stack, Typography } from "@mui/material";
 import backgroundone from "../../../shared/assets/images/backgroundone.jpg";
-
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const FirstSection = () => {
+  const { t } = useTranslation();
+
   return (
     <Stack
       id="home"
@@ -21,12 +23,10 @@ const FirstSection = () => {
       }}
     >
       <Typography variant="h2" sx={{ marginBottom: "1rem" }}>
-        Welcome to Taqatco
+        {t("firstSection.welcome")}
       </Typography>
       <Typography variant="h6" sx={{ maxWidth: "600px" }}>
-        We turn waste into valuable resources, driving Saudi Arabia’s path to
-        zero carbon emissions by 2060. Discover our sustainable solutions in
-        recycling and biogas production for a cleaner, greener future.
+        {t("firstSection.description")}
       </Typography>
     </Stack>
   );

@@ -12,7 +12,7 @@ function App() {
   //SECTION - useEffect
   useEffect(() => {
     if (!localStorage.getItem("i18nextLng")) {
-      localStorage.setItem("i18nextLng", "en");
+      localStorage.setItem("i18nextLng", "ar");
     }
   }, []);
 

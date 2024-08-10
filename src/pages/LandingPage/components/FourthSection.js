@@ -10,9 +10,11 @@ import {
 } from "react-icons/fa";
 import ServiceCard from "../../../components/ServiceCard";
 import { useTheme } from "@emotion/react";
+import { useTranslation } from "react-i18next";
 
 const FourthSection = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   const servicesStyles = {
     color: theme.palette.primary.light,
@@ -21,42 +23,47 @@ const FourthSection = () => {
 
   const services = [
     {
-      title: "Municipal Solid Waste Recycling",
-      description:
-        "Advanced processes to convert waste into valuable resources, reducing landfill usage.",
+      title: t("fourthSection.services.municipalSolidWasteRecycling.title"),
+      description: t(
+        "fourthSection.services.municipalSolidWasteRecycling.description"
+      ),
       icon: <FaTrashAlt {...servicesStyles} />,
     },
     {
-      title: "Metal and Scrap Recycling",
-      description:
-        "Specialized recycling of various scrap materials, including metals, to promote resource recovery and sustainability.",
+      title: t("fourthSection.services.metalAndScrapRecycling.title"),
+      description: t(
+        "fourthSection.services.metalAndScrapRecycling.description"
+      ),
       icon: <FaIndustry {...servicesStyles} />,
     },
     {
-      title: "Biogas Production",
-      description:
-        "Generation of renewable energy from organic waste through anaerobic digestion.",
+      title: t("fourthSection.services.biogasProduction.title"),
+      description: t("fourthSection.services.biogasProduction.description"),
       icon: <FaLeaf {...servicesStyles} />,
     },
     {
-      title: "Organic Fertilizer Production",
-      description:
-        "Conversion of waste into high-quality organic fertilizers for agricultural use.",
+      title: t("fourthSection.services.organicFertilizerProduction.title"),
+      description: t(
+        "fourthSection.services.organicFertilizerProduction.description"
+      ),
       icon: <FaSeedling {...servicesStyles} />,
     },
     {
-      title: "Environmental Consulting",
-      description:
-        "Expert guidance on sustainable waste management practices and regulatory compliance.",
+      title: t("fourthSection.services.environmentalConsulting.title"),
+      description: t(
+        "fourthSection.services.environmentalConsulting.description"
+      ),
       icon: <FaClipboardCheck {...servicesStyles} />,
     },
     {
-      title: "Waste Management Solutions",
-      description:
-        "Tailored solutions for businesses and municipalities to manage and reduce waste effectively.",
+      title: t("fourthSection.services.wasteManagementSolutions.title"),
+      description: t(
+        "fourthSection.services.wasteManagementSolutions.description"
+      ),
       icon: <FaTruck {...servicesStyles} />,
     },
   ];
+
   return (
     <Stack
       sx={{
@@ -75,7 +82,7 @@ const FourthSection = () => {
         id="services"
       >
         <Typography color={"primary.light"} variant="h5">
-          Our Services
+          {t("fourthSection.servicesTitle")}
         </Typography>
         <Grid direction={{ xs: "column", md: "row" }} container xs={12}>
           {services.map((service) => (

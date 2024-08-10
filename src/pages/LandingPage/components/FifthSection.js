@@ -1,13 +1,5 @@
 import { Stack, Typography } from "@mui/material";
 import React from "react";
-import {
-  FaTrashAlt,
-  FaIndustry,
-  FaLeaf,
-  FaSeedling,
-  FaClipboardCheck,
-  FaTruck,
-} from "react-icons/fa";
 import { useTheme } from "@emotion/react";
 import osama from "../../../shared/assets/images/osama.jpg";
 import ahmed from "../../../shared/assets/images/ahmed.jpg";
@@ -15,30 +7,34 @@ import jasem from "../../../shared/assets/images/jasem.jpg";
 import waleed from "../../../shared/assets/images/waleed.jpg";
 import MemberCard from "../../../components/MemberCard";
 import Grid from "@mui/material/Grid";
+import { useTranslation } from "react-i18next";
 
 const FifthSection = () => {
+  const { t } = useTranslation();
+
   const founders = [
     {
-      name: "Osama Alharbi",
+      name: t("fifthSection.teamMembers.0.name"),
       photo: osama,
-      link: "https://www.linkedin.com/in/osama-alharbi-1b3a961ba/",
+      link: t("fifthSection.teamMembers.0.link"),
     },
     {
-      name: "Ahmed Aldhaif",
+      name: t("fifthSection.teamMembers.1.name"),
       photo: ahmed,
-      link: "https://www.linkedin.com/in/ahmed-aldhaif-75360a262/",
+      link: t("fifthSection.teamMembers.1.link"),
     },
     {
-      name: "Jasem Alyousef",
+      name: t("fifthSection.teamMembers.2.name"),
       photo: jasem,
-      link: "https://www.linkedin.com/in/jasem-al-yousef-626473252/",
+      link: t("fifthSection.teamMembers.2.link"),
     },
     {
-      name: "Waleed Alghamdi",
+      name: t("fifthSection.teamMembers.3.name"),
       photo: waleed,
-      link: "https://www.linkedin.com/in/waleed-alghamdi",
+      link: t("fifthSection.teamMembers.3.link"),
     },
   ];
+
   return (
     <Stack
       sx={{
@@ -57,7 +53,7 @@ const FifthSection = () => {
         id="team"
       >
         <Typography color={"tertiary.main"} variant="h5">
-          Our Team
+          {t("fifthSection.teamTitle")}
         </Typography>
         <Grid
           direction={{ xs: "column", md: "row" }}

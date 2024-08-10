@@ -11,18 +11,10 @@ import logoTransparent from "../../assets/images/logoTransparent.png";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-
-const sections = [
-  { id: "home", name: "Home" },
-  { id: "about-us", name: "About Us" },
-  { id: "vision-mission", name: "Vision and Mission" },
-  { id: "values", name: "Values" },
-  { id: "goals", name: "Goals" },
-  { id: "services", name: "Services" },
-  { id: "team", name: "Team" },
-];
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -80,16 +72,16 @@ const Footer = () => {
               }}
             />
           </Box>
-        )}{" "}
+        )}
         <Stack
           direction="row"
-          spacing={2}
+          gap={2}
           sx={{
             flexWrap: "wrap", // Wrap items in this section
             justifyContent: { xs: "center", sm: "flex-start" }, // Center on mobile
           }}
         >
-          {sections.map((section) => (
+          {t("footer.sections", { returnObjects: true }).map((section) => (
             <Typography
               key={section.id}
               onClick={() => handleScroll(section.id)}
@@ -136,7 +128,7 @@ const Footer = () => {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        spacing={2}
+        gap={2}
         sx={{ flexWrap: "wrap" }} // Wrap items on small screens
       >
         <IconButton
@@ -184,7 +176,7 @@ const Footer = () => {
           color: theme.palette.common.white,
         }}
       >
-        &copy; {new Date().getFullYear()} Taqatco. All rights reserved.
+        {t("footer.copyright", { year: new Date().getFullYear() })}
       </Typography>
     </Stack>
   );

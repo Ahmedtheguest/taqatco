@@ -4,32 +4,27 @@ import MenuIcon from "@mui/icons-material/Menu";
 import React, { useState, useEffect } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import logoTransparent from "../../assets/images/logoTransparent.png";
-
-const sections = [
-  { id: "home", name: "Home" },
-  { id: "about-us", name: "About Us" },
-  { id: "vision-mission", name: "Vision and Mission" },
-  { id: "values", name: "Values" },
-  { id: "goals", name: "Goals" },
-  { id: "services", name: "Services" },
-  { id: "team", name: "Team" },
-];
+import { useTranslation } from "react-i18next";
 
 const Navbar = ({ colorChange }) => {
+  const { t, i18n } = useTranslation();
   const theme = useTheme();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
-  const textStyles = {
+  const textStyles = (colorChange) => ({
     cursor: "pointer",
     color: colorChange
-      ? theme.palette.tertiary.main
+      ? !isMobile
+        ? theme.palette.tertiary.main
+        : theme.palette.primary.light
       : theme.palette.primary.light,
+    transition: "color 0.3s ease", // Smooth transition for hover effect
     "&:hover": {
       color: colorChange ? theme.palette.gray.main : theme.palette.primary.main,
       transition: "color 0.3s ease", // Smooth transition for hover effect
     },
-  };
+  });
 
   const handleScroll = (id) => {
     const element = document.getElementById(id);
@@ -49,38 +44,59 @@ const Navbar = ({ colorChange }) => {
     }
   };
 
-  const renderMenuItems = () => (
-    <>
-      {sections.map((section) => (
+  const handleLanguageChange = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
+  const handleLogoClick = () => {
+    handleScroll("home");
+  };
+
+  const renderMenuItems = () => {
+    const sections = t("navbar.sections", { returnObjects: true });
+
+    return (
+      <>
+        {sections.map((section) => (
+          <Typography
+            key={section.id}
+            sx={textStyles(colorChange)}
+            variant="h6"
+            onClick={() => handleScroll(section.id)}
+          >
+            {section.name}
+          </Typography>
+        ))}
+        <Divider
+          orientation={isMobile ? "horizontal" : "vertical"}
+          flexItem
+          sx={{
+            color: colorChange
+              ? !isMobile
+                ? theme.palette.tertiary.main
+                : theme.palette.primary.light
+              : theme.palette.primary.light,
+          }}
+        />
         <Typography
-          key={section.id}
-          sx={textStyles}
+          sx={textStyles(colorChange)}
           variant="h6"
-          onClick={() => handleScroll(section.id)}
+          onClick={() =>
+            handleLanguageChange(i18n.language === "en" ? "ar" : "en")
+          }
         >
-          {section.name}
+          {t("navbar.language")}
         </Typography>
-      ))}
-      <Divider
-        orientation={isMobile ? "horizontal" : "vertical"}
-        flexItem
-        sx={{
-          borderColor: colorChange
-            ? theme.palette.tertiary.main
-            : theme.palette.primary.light,
-        }}
-      />
-      <Typography sx={textStyles} variant="h6">
-        Arabic
-      </Typography>
-    </>
-  );
+      </>
+    );
+  };
 
   useEffect(() => {
     const handleScrollEvent = () => {
       const scrollPosition = window.scrollY;
       console.log("Current scroll position:", scrollPosition);
 
+      const sections = t("navbar.sections", { returnObjects: true });
       let currentSection = "None";
       sections.forEach((section) => {
         const element = document.getElementById(section.id);
@@ -103,7 +119,7 @@ const Navbar = ({ colorChange }) => {
     return () => {
       window.removeEventListener("scroll", handleScrollEvent);
     };
-  }, []);
+  }, [t]);
 
   return (
     <>
@@ -128,7 +144,8 @@ const Navbar = ({ colorChange }) => {
                 ? `1px solid ${theme.palette.tertiary.main}`
                 : "auto",
               margin: "3%",
-              marginLeft: "8%",
+              marginLeft: i18n.language === "en" ? "8%" : "auto",
+              marginRight: i18n.language === "ar" ? "8%" : "auto",
             }}
             justifyContent={"space-between"}
             direction={"row"}
@@ -141,13 +158,25 @@ const Navbar = ({ colorChange }) => {
                     : theme.palette.primary.light,
                 }}
               />
-            </IconButton>{" "}
-          </Stack>{" "}
-          <Stack sx={{ height: "100px", marginRight: "8%" }}>
+            </IconButton>
+          </Stack>
+          <Stack
+            sx={{
+              height: "100px",
+              marginRight: i18n.language === "en" ? "8%" : "auto",
+              marginLeft: i18n.language === "ar" ? "8%" : "auto",
+            }}
+          >
             <img
               src={logoTransparent}
               alt="logo"
-              style={{ objectFit: "fill", width: "100%", height: "100%" }}
+              style={{
+                objectFit: "fill",
+                width: "100%",
+                height: "100%",
+                cursor: "pointer",
+              }}
+              onClick={handleLogoClick}
             />
           </Stack>
           <Drawer
@@ -183,9 +212,10 @@ const Navbar = ({ colorChange }) => {
           <Stack
             alignItems={"center"}
             direction="row"
-            spacing={2}
+            gap={2}
             sx={{
-              marginLeft: "5%",
+              marginLeft: i18n.language === "en" ? "5%" : "auto",
+              marginRight: i18n.language === "ar" ? "5%" : "auto",
               borderRadius: "100em",
               border: `1px solid ${theme.palette.tertiary.main}`,
               padding: ".7em 1.389em",
@@ -194,11 +224,23 @@ const Navbar = ({ colorChange }) => {
           >
             {renderMenuItems()}
           </Stack>
-          <Stack sx={{ height: "100px" }}>
+          <Stack
+            sx={{
+              height: "100px",
+              marginRight: i18n.language === "en" ? "5%" : "auto",
+              marginLeft: i18n.language === "ar" ? "5%" : "auto",
+            }}
+          >
             <img
               src={logoTransparent}
               alt="logo"
-              style={{ objectFit: "fill", width: "100%", height: "100%" }}
+              style={{
+                objectFit: "fill",
+                width: "100%",
+                height: "100%",
+                cursor: "pointer",
+              }}
+              onClick={handleLogoClick}
             />
           </Stack>
         </Stack>
@@ -230,15 +272,21 @@ const Navbar = ({ colorChange }) => {
               padding: ".7em 1.389em",
               height: "fit-content",
             }}
-            spacing={2}
+            gap={2}
           >
             {renderMenuItems()}
-          </Stack>{" "}
+          </Stack>
           <Stack sx={{ height: "100px" }}>
             <img
               src={logoTransparent}
               alt="logo"
-              style={{ objectFit: "fill", width: "100%", height: "100%" }}
+              style={{
+                objectFit: "fill",
+                width: "100%",
+                height: "100%",
+                cursor: "pointer",
+              }}
+              onClick={handleLogoClick}
             />
           </Stack>
         </Stack>

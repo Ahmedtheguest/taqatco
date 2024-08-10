@@ -10,47 +10,47 @@ import {
   FaChartLine,
   FaPeopleCarry,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const ThirdSection = () => {
+  const { t } = useTranslation();
   const goalsStyles = {
     color: "primary.light",
     size: 24,
   };
   const goals = [
     {
-      title: "Enhance Environmental Sustainability",
-      description:
-        "Lead waste recycling initiatives to support Saudi Arabia's environmental goals.",
+      title: t("thirdSection.goals.enhanceEnvironmentalSustainability.title"),
+      description: t(
+        "thirdSection.goals.enhanceEnvironmentalSustainability.description"
+      ),
       icon: <FaRecycle {...goalsStyles} />,
     },
     {
-      title: "Reduce Carbon Footprint",
-      description:
-        "Drive efforts toward achieving zero carbon emissions by 2060.",
+      title: t("thirdSection.goals.reduceCarbonFootprint.title"),
+      description: t("thirdSection.goals.reduceCarbonFootprint.description"),
       icon: <FaTree {...goalsStyles} />,
     },
     {
-      title: "Promote Circular Economy",
-      description:
-        "Transform waste into valuable resources to reduce landfill dependence.",
+      title: t("thirdSection.goals.promoteCircularEconomy.title"),
+      description: t("thirdSection.goals.promoteCircularEconomy.description"),
       icon: <FaRedo {...goalsStyles} />,
     },
     {
-      title: "Foster Innovation",
-      description:
-        "Develop cutting-edge recycling technologies aligned with global standards.",
+      title: t("thirdSection.goals.fosterInnovation.title"),
+      description: t("thirdSection.goals.fosterInnovation.description"),
       icon: <FaCogs {...goalsStyles} />,
     },
     {
-      title: "Support Economic Diversification",
-      description:
-        "Contribute to the growth of the green economy in Saudi Arabia.",
+      title: t("thirdSection.goals.supportEconomicDiversification.title"),
+      description: t(
+        "thirdSection.goals.supportEconomicDiversification.description"
+      ),
       icon: <FaChartLine {...goalsStyles} />,
     },
     {
-      title: "Empower Communities",
-      description:
-        "Create sustainable job opportunities and raise environmental awareness.",
+      title: t("thirdSection.goals.empowerCommunities.title"),
+      description: t("thirdSection.goals.empowerCommunities.description"),
       icon: <FaPeopleCarry {...goalsStyles} />,
     },
   ];
@@ -90,7 +90,7 @@ const ThirdSection = () => {
           sx={{ marginBottom: "1rem" }}
           color={"primary.light"}
         >
-          Our Goals Align with Vision 2030!
+          {t("thirdSection.goalsTitle")}
         </Typography>
         <Grid xs={12} container>
           {goals.map((goal) => (
